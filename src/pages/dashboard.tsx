@@ -12,7 +12,9 @@ const Dashboard = () => {
             Dashboard
           </p>
           <div className="my-5 grid grid-cols-1 md:grid-cols-2 gap-2">
-            <div className="h-32 w-64 border flex items-center justify-center bg-linear-to-r from-pink-500 to-violet-950  ">
+            <div className="h-32 w-64 border flex items-center justify-center bg-linear-to-r from-pink-500 to-violet-950  
+            hover:scale-105 duration-150 animate-pulse hover:animate-none
+            ">
               <Link
                 className="text-2xl text-white font-bold text-decoration-none"
                 to={"/tictactoe"}
@@ -20,7 +22,7 @@ const Dashboard = () => {
                 Jugar Tic Tac Toe
               </Link>
             </div>
-            <div className="h-32 w-64 border flex items-center justify-center bg-linear-to-r from-pink-500 to-violet-950  ">
+            <div className="h-32 w-64 border flex items-center justify-center bg-linear-to-r from-pink-500 to-violet-950  hover:scale-105 duration-150 animate-pulse hover:animate-none">
               <Link
                 className="text-2xl text-center text-white font-bold text-decoration-none"
                 to={"/game_pokemon"}

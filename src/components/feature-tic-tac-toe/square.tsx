@@ -10,9 +10,9 @@ interface props {
 const Square = ({value, onHandlerClick, casillaGanadora}:props) => {
 
   return (
-      <button className={"h-14 w-14 flex  text-black justify-center items-center border font-bold text-2xl "+ (casillaGanadora ? "border-amber-800 text-amber-800 bg-amber-300" : "border-black dark:border-white ")}
+      <button className={"h-14 w-14 flex text-black justify-center items-center border font-bold "+ (casillaGanadora ? "border-amber-800 text-amber-800 bg-amber-300" : "border-black dark:border-white ")}
         onClick={onHandlerClick}
-      >{ !!value && value }</button>
+      ><span className="text-2xl">{ !!value && value }</span></button>
   )
 }
 export default Square

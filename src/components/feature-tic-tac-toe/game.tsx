@@ -30,7 +30,7 @@ const Game = () => {
   };
 
   return (
-    <div className="m-6 flex justify-center gap-3 dark:text-white">
+    <div className="m-6 flex justify-center gap-3 ">
       <div>
         <Board
           squares={currentSquares}
