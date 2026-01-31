@@ -24,7 +24,7 @@ const Login = () => {
     >
       <div className=" p-2 rounded bg-white bg-opacity-75 space-y-3">
         <div className="w-lg h-64 bg-[url(/fondo-principal.png)] bg-cover bg-center  text-center">
-          <div className="bg-white bg-opacity-50 h-full flex items-center justify-center">
+          <div className="bg-white bg-opacity-75 h-full flex items-center justify-center">
             <p className="block text-shadow m-auto h-fit shadow-amber-500 bg-linear-to-r from-pink-500 to-violet-950 bg-clip-text text-5xl font-extrabold text-transparent">
               Bienvenido a tu pagina de diversiones!
             </p>

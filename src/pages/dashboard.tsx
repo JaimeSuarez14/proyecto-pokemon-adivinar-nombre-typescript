@@ -15,7 +15,7 @@ const Dashboard = () => {
             <div className="h-32 w-64 border flex items-center justify-center bg-linear-to-r from-pink-500 to-violet-950  ">
               <Link
                 className="text-2xl text-white font-bold text-decoration-none"
-                to={"/game_pokemon"}
+                to={"/tictactoe"}
               >
                 Jugar Tic Tac Toe
               </Link>

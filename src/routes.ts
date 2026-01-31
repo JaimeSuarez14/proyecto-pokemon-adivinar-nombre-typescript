@@ -3,6 +3,7 @@ import App from "./App";
 import Login from "./pages/login";
 import GamePokemon from "./pages/game-pokemon";
 import Dashboard from "./pages/dashboard";
+import TicTacToe from "./pages/game_tic_tac_toe";
 
 export const router  = createBrowserRouter([
   { 
@@ -20,6 +21,10 @@ export const router  = createBrowserRouter([
       {
         path:"game_pokemon",
         Component: GamePokemon
+      },
+      {
+        path:"tictactoe",
+        Component: TicTacToe
       }
   ]
   },
