@@ -1,6 +1,8 @@
 import { createBrowserRouter } from "react-router";
 import App from "./App";
 import Login from "./pages/login";
+import GamePokemon from "./pages/game-pokemon";
+import Dashboard from "./pages/dashboard";
 
 export const router  = createBrowserRouter([
   { 
@@ -13,7 +15,11 @@ export const router  = createBrowserRouter([
       },
       {
         path:"dashboard",
-        Component: Login
+        Component: Dashboard
+      },
+      {
+        path:"game_pokemon",
+        Component: GamePokemon
       }
   ]
   },
