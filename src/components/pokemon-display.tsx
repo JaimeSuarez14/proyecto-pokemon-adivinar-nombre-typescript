@@ -25,11 +25,11 @@ const PokemonDisplay = ({ pokemon, respuesta, loading, error }: PokemonDisplayPr
       <img
         src={pokemon?.image}
         alt="pokemon"
-        className={`transition-all duration-500 ease-in-out hover:-rotate-10 transform hover:scale-110 ${respuesta ? 'brightness-100' : 'brightness-0'} w-64 h-64`}
+        className={`transition-all duration-500 ease-in-out hover:-rotate-10 transform hover:scale-110   animate-wiggle ${respuesta ? 'brightness-100' : 'brightness-0'} w-64 h-64`}
       />
       {!respuesta && (
         <div className="absolute inset-0 flex justify-center items-center">
-          <div className="w-64 h-64 bg-yellow-900 rounded-xl animate-pulse"></div>
+          <div className="w-64 md:w-72 h-64 bg-yellow-900 rounded-xl animate-pulse"></div>
         </div>
       )}
     </div>
