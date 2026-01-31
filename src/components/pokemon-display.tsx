@@ -1,52 +1,37 @@
-import { useEffect, useState } from "react";
-import type { PokemonPartial } from "../hooks/PokemonPartial ";
+import { type PokemonPartial } from "../hooks/PokemonPartial ";
 
-interface props {
+interface PokemonDisplayProps {
   pokemon: PokemonPartial | null;
   respuesta: string;
   loading: boolean;
-  error: string | null;
-}
+  error: string | null ;
+} 
 
-const PokemonDisplay = ({ pokemon, respuesta, loading, error }: props) => {
-  const { name, image } = pokemon || { name: "", image: "" };
+const PokemonDisplay = ({ pokemon, respuesta, loading, error }: PokemonDisplayProps) => {
+  if (!loading) {
+    return (
+      <div className="flex justify-center items-center h-64">
+        <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-yellow-400"></div>
+      </div>
+    );
+  }
 
-  const [showAnswer, setShowAnswer] = useState(false);
-
-  useEffect(() => {
-    respuesta.trim().length > 0 ? setShowAnswer(true): setShowAnswer(false);
-  }, [respuesta]);
+  if (error) {
+    return <p className="text-center text-red-500">Error: {error}; <br /> Inténtalo de nuevo en unos minutos.</p>;
+  }
 
   return (
-    <div className="card">
-      <div className="card-header">
-        <h1 className="text-center">
-          {showAnswer ? name.toUpperCase(): "¿Quien es este pokemon?"}
-        </h1>
-      </div>
-
-      <div className="card-body">
-        {!loading ? (
-          <div className="d-flex justify-content-center">
-            <div className="spinner-border text-primary " role="status">
-              <span className="visually-hidden">Loading...</span>
-            </div>
-          </div>
-        ) : !error ? (
-          <img
-            src={image ?? undefined}
-            alt={name ?? undefined}
-            className="img-fluid mx-auto d-block"
-            style={{
-              maxHeight: "300px",
-              filter: showAnswer ? "none" : "brightness(0)",
-              transition: "filter 0.5s ease-in-out",
-            }}
-          />
-        ) : (
-          <p>{error}</p>
-        )}
-      </div>
+    <div className="relative flex justify-center items-center h-64">
+      <img
+        src={pokemon?.image}
+        alt="pokemon"
+        className={`transition-all duration-500 ease-in-out ${respuesta ? 'brightness-100' : 'brightness-0'} w-64 h-64`}
+      />
+      {!respuesta && (
+        <div className="absolute inset-0 flex justify-center items-center">
+          <div className="w-64 h-64 bg-yellow-900 rounded-xl animate-pulse"></div>
+        </div>
+      )}
     </div>
   );
 };

@@ -1,48 +1,36 @@
+
 import { useState } from "react";
 
-interface props {
-  setResultado: React.Dispatch<React.SetStateAction<string>>;
+interface PokemonFormProps {
+  setResultado: (value: string) => void;
 }
 
-const PokemonForm = ({setResultado}: props) => {
-  
-  const [inputValue, setInputValue] = useState("");
+const PokemonForm = ({ setResultado }: PokemonFormProps) => {
+  const [pokemon, setPokemon] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if(!inputValue.trim()){
-      return;
-    }
-    setResultado(inputValue);
-    setInputValue("");
-  }
+    setResultado(pokemon.toLowerCase());
+    setPokemon("");
+  };
 
   return (
-    <form action="" className="row my-1" onSubmit={handleSubmit}>
-      <div className="mb-3 col-12 col-md-9 col-lg-8 pe-lg-1"> {/**pe = pading rigth o end */}
-        <input
-          type="text"
-          className="form-control"
-          value={inputValue}
-          autoFocus
-          onChange={(e) => {
-            setInputValue(e.target.value);
-          }}
-
-          placeholder="Ingrese su respuesta"
-        />
-      </div>
-      <div className="col-12 col-md-3 col-lg-4 ps-lg-1"> {/**ps = pading letf o start */}
-        <button 
-        type="submit" 
-        className="btn btn-outline-primary d-block w-100 px-md-0 px-lg-1"
-        disabled={!inputValue.trim()} //no puedo hacer click sino hay nada en el input
-        >
-          Adivinar
-        </button>
-      </div>
+    <form onSubmit={handleSubmit} className="flex flex-col space-y-4">
+      <input
+        type="text"
+        value={pokemon}
+        onChange={(e) => setPokemon(e.target.value)}
+        placeholder="Ingresa el nombre del pokémon"
+        className="bg-gray-700 text-white placeholder-gray-500 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-400 transition-all duration-300"
+      />
+      <button
+        type="submit"
+        className="bg-yellow-400 text-gray-900 font-bold rounded-lg px-4 py-2 hover:bg-yellow-500 transition-all duration-300 transform hover:scale-105"
+      >
+        ¡Adivinar!
+      </button>
     </form>
   );
-}
+};
 
-export default PokemonForm
+export default PokemonForm;
