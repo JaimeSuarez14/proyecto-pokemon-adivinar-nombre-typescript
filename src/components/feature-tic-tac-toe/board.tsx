@@ -47,7 +47,7 @@ const Board = ({onPlay, squares, xIsNext, resetearJuego}:props) => {
   const completo = squares.every(p=> p!==null)
 
   return (
-    <div className="grid grid-cols-3 place-items-center border w-fit gap-3 border-black dark:border-white mx-auto h-fit my-auto p-4 ">
+    <div className="grid grid-cols-3 place-items-center border w-fit gap-3 border-black bg-gray-400 mx-auto h-fit my-auto p-4 ">
       <div className="col-span-3 py-3 space-y-2 text-black">
         <p>
           {status

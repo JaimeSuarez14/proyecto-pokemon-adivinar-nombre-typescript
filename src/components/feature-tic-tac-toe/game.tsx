@@ -44,7 +44,7 @@ const Game = () => {
         {history.map((p, index) => (
           <button
             key={index}
-            className="py-0.5 px-2 border text-sm text-left bg-blue-800 text-white hover:bg-blue-900 rounded-lg"
+            className="py-0.5 px-2 border  text-sm text-left bg-blue-800 text-white hover:bg-blue-900 rounded-lg"
             onClick={() => saltaA(index)}
           >
             {index >= 1 ? p : "Inicio del Juego"}

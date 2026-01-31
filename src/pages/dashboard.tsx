@@ -6,7 +6,7 @@ const Dashboard = () => {
       className="w-full min-h-screen  text-white 
     bg-[url(/fondo-principal.png)]  bg-opacity-50 bg-amber-300"
     >
-      <div className="bg-black bg-opacity-50 w-full h-screen flex justify-center items-center " >
+      <div className="bg-black/75 w-full h-screen flex justify-center items-center " >
         <div>
           <p className="text-6xl mx-auto font-bold p-3 bg-blue-950 text-center w-fit">
             Dashboard

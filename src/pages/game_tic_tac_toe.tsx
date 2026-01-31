@@ -13,7 +13,7 @@ const TicTacToe = () => {
             Ir al Dashboard
           </Link>
         </div>
-        <h1 className="py-4">Bienvenido juego Tic Tac Toe</h1>
+        <h1 className="py-4 text-3xl font-bold">Bienvenido juego Tic Tac Toe</h1>
         <Game />
       </div>
     </div>

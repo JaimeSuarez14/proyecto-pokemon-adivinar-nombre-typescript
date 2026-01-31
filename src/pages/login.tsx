@@ -24,7 +24,7 @@ const Login = () => {
     >
       <div className=" p-2 rounded bg-white bg-opacity-75 space-y-3">
         <div className="w-lg h-64 bg-[url(/fondo-principal.png)] bg-cover bg-center  text-center">
-          <div className="bg-white bg-opacity-75 h-full flex items-center justify-center">
+          <div className="bg-white/70 h-full flex items-center justify-center">
             <p className="block text-shadow m-auto h-fit shadow-amber-500 bg-linear-to-r from-pink-500 to-violet-950 bg-clip-text text-5xl font-extrabold text-transparent">
               Bienvenido a tu pagina de diversiones!
             </p>
@@ -38,7 +38,7 @@ const Login = () => {
             <div className="w-fit mx-auto relative">
               <input
                 type="text"
-                className="bg-gray-700 font-bold text-3xl w-sm text-white placeholder-gray-500 rounded-lg pl-10 pr-4 py-3 focus:outline-none focus:ring-8 focus:ring-yellow-500 transition-all duration-300"
+                className="bg-gray-700 text-center font-bold text-2xl w-sm text-white placeholder-gray-500 rounded-lg pl-10 pr-4 py-3 focus:outline-none focus:ring-8 focus:ring-yellow-500 transition-all duration-300"
                 placeholder="Ingrese el Usuario"
                 onChange={(e) => setUsuario(e.target.value)}
               />
@@ -47,7 +47,7 @@ const Login = () => {
             <div className="w-fit mx-auto relative">
               <input
                 type="password"
-                className="bg-gray-700 font-bold text-4 w-sm text-white placeholder-gray-500 rounded-lg pl-10 pr-4 py-3 focus:outline-none focus:ring-8 focus:ring-yellow-500 transition-all duration-300"
+                className="bg-gray-700 text-center font-bold text-2xl w-sm text-white placeholder-gray-500 rounded-lg pl-10 pr-4 py-3 focus:outline-none focus:ring-8 focus:ring-yellow-500 transition-all duration-300"
                 placeholder="Ingrese el Password"
                  onChange={(e) => setPass(e.target.value)}
               />
@@ -60,7 +60,7 @@ const Login = () => {
               Login
             </button>
           </form>
-          {mensaje && <p className="text-red-200 p-3 bg-red-700">{mensaje}<button className="pl-5 hover:font-bold text-5xl  rounded-3" onClick={() => setMensaje("")}>x</button></p>}
+          {mensaje && <p className="text-red-200 p-3 bg-red-700">{mensaje}<button className="pl-5 hover:font-bold text-2xl  rounded-3" onClick={() => setMensaje("")}>x</button></p>}
           <p className="text-gray-300 py-3 font-serif text-center italic  bg-blue-800 ">
             Demo User: jaime Password:admin
           </p>
