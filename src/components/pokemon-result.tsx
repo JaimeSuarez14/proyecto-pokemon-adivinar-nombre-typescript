@@ -25,7 +25,7 @@ const PokemonResult = ({ respuesta, setRespuesta, name, reloadPokemon }: Pokemon
       {!esCorrecto && <p className="text-lg">El pokémon era: {name}</p>}
       <button
         onClick={handleNext}
-        className="mt-4 bg-gray-900 text-white font-bold rounded-lg px-4 py-2 hover:bg-gray-700 transition-all duration-300"
+        className="mt-4 bg-gray-900 text-white font-bold rounded-3 px-4 py-2 hover:bg-gray-700 transition-all duration-300  transform hover:scale-105"
       >
         Siguiente
       </button>
