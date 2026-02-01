@@ -1,21 +1,15 @@
 interface PokemonResultProps {
   respuesta: string;
-  setRespuesta: (value: string) => void;
   name: string;
-  reloadPokemon: () => void;
+  handleNext: () => void;
 }
 
-const PokemonResult = ({ respuesta, setRespuesta, name, reloadPokemon }: PokemonResultProps) => {
+const PokemonResult = ({ respuesta, handleNext, name }: PokemonResultProps) => {
   if (!respuesta) {
     return null;
   }
 
   const esCorrecto = name === respuesta;
-
-  const handleNext = () => {
-    setRespuesta("");
-    reloadPokemon();
-  };
 
   return (
     <div className={`text-center p-4 rounded-lg ${esCorrecto ? 'bg-green-500' : 'bg-red-500'} animate-pulse`}>

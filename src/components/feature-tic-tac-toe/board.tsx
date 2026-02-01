@@ -47,9 +47,9 @@ const Board = ({onPlay, squares, xIsNext, resetearJuego}:props) => {
   const completo = squares.every(p=> p!==null)
 
   return (
-    <div className="grid grid-cols-3 place-items-center border w-fit gap-3 border-black bg-gray-400 mx-auto h-fit my-auto p-4 ">
+    <div className="grid grid-cols-3 place-items-center border rounded-lg w-fit gap-3 border-black bg-gray-400 mx-auto h-fit my-auto p-4 ">
       <div className="col-span-3 py-3 space-y-2 text-black">
-        <p>
+        <p className="font-bold">
           {status
             ? "El ganador es " + squares[status[0]]
             : completo ? "Juego Terminado: Empate": "El turno es de " + (xIsNext ? "X" : "O")}
@@ -58,7 +58,7 @@ const Board = ({onPlay, squares, xIsNext, resetearJuego}:props) => {
           (status || completo) && 
           (<button 
             onClick={resetearJuego}
-            className="p-3 border bg-amber-800 text-white hover:bg-amber-700 rounded-lg">Reiniciar el juego</button>)
+            className="px-3 py-2 border bg-amber-800 text-white hover:bg-amber-700 rounded-lg">Reiniciar el juego</button>)
         }
       </div>
 

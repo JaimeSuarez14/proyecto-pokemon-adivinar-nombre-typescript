@@ -6,6 +6,7 @@ import GameStats from "../components/game-stats";
 import useGeneralService from "../service/useGeneraServices";
 import { useWindowSize } from "react-use";
 import ReactConfetti from "react-confetti";
+import { Link } from "react-router";
 
 const GamePokemon = () => {
   const [respuesta, setRespuesta] = useState<string>("");
@@ -18,8 +19,15 @@ const GamePokemon = () => {
 
   const { width, height } = useWindowSize();
 
+   const handleNext = () => {
+    setRespuesta("");
+    reloadPokemon();
+  };
+
   useEffect(() => {
-    if (respuesta) {
+    if (respuesta.trim().length>0) {
+      console.log(respuesta,"entro al useEffect");
+      
       if (name === respuesta) {
         setVictorias(victorias + 1);
       } else {
@@ -40,7 +48,8 @@ const GamePokemon = () => {
           gravity={0.1}
         />
       )}
-      <div className="w-full max-w-md mx-auto bg-gray-800 rounded-2xl shadow-2xl p-6 space-y-4">
+      <div className="w-full max-w-md mx-auto bg-gray-800 rounded-2xl shadow-2xl p-6 space-y-4 relative">
+        <Link  to="/dashboard" className="absolute top-0 md:-left-22 left-0 py-2 px-4 border text-sm text-left bg-orange-600 text-white hover:bg-orange-700 duration-200 rounded-lg">Regresar</Link>
         <h1 className="text-4xl font-bold text-center text-yellow-400 animate-pulse">
           ¿Quién es ese Pokémon?
         </h1>
@@ -50,12 +59,16 @@ const GamePokemon = () => {
           loading={loading}
           error={error}
         />
-        <PokemonForm setResultado={setRespuesta} />
+        
+        <div className="text-sm">Probar con otro Pokemon:  
+          <button onClick={handleNext} className="hover:scale-105 hover:text-green-600 duration-200 px-2 py-1 rounded-lg border border-green-500 cursor-pointer ml-2">Volver a cargar</button>
+        </div>
+        
+        <PokemonForm setResultado={setRespuesta} resultado={respuesta}/>
         <PokemonResult
           respuesta={respuesta}
-          setRespuesta={setRespuesta}
+          handleNext={handleNext}
           name={name}
-          reloadPokemon={reloadPokemon}
         />
         <GameStats victorias={victorias} derrotas={derrotas} />
       </div>

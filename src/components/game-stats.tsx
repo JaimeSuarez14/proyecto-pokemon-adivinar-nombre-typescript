@@ -9,7 +9,7 @@ const GameStats = ({ victorias, derrotas }: GameStatsProps) => {
   const porcentajeEfectividad = total > 0 ? (victorias / total) * 100 : 0;
 
   const mensajito = porcentajeEfectividad==100 ? "Eres todo un maestro pokemon!!" : porcentajeEfectividad<=99 && porcentajeEfectividad>75 ? "Casi eres un maestro pokemon!!" : 
-        porcentajeEfectividad<=75 && porcentajeEfectividad> 50 ? "Estas en un camino por el liderazgo pokemon!!" : porcentajeEfectividad<=50 && porcentajeEfectividad>20 ? "Los maestros no se forman en un dia, sigue intentandolo!!" : "La proxima vez demostraraas tu valentia en este reto!!"
+        porcentajeEfectividad<=75 && porcentajeEfectividad> 50 ? "Estas en un camino por el liderazgo pokemon!!" : porcentajeEfectividad<=50 && porcentajeEfectividad>20 ? "Los maestros no se forman en un dia, sigue intentandolo!!" : "La proxima vez demostrarás tu valentia en este reto!!"
   
   return (
     <div className="flex flex-col">
