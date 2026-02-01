@@ -15,7 +15,7 @@ const GamePokemon = () => {
 
   const { data, loading, error, reloadPokemon } = useGeneralService();
 
-  const name = data?.name ?? "";
+  const name = data?.name ?? "vacio";
 
   const { width, height } = useWindowSize();
 

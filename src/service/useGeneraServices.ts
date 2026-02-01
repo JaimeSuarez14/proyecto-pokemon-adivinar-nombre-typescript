@@ -1,5 +1,5 @@
 import { useState } from "react";
-import apiFetch from "../hooks/ApiFetch"
+import useApiFetch from "../hooks/ApiFetch"
 import type { PokemonPartial } from "../hooks/PokemonPartial ";
 import pokemoAletorio from "../hooks/ValorAleatorio";
 
@@ -10,7 +10,7 @@ const useGeneralService = () => {
     return `https://pokeapi.co/api/v2/pokemon/${aleatorio}`;
   });
 
-  const values = apiFetch<PokemonPartial>(url);
+  const values = useApiFetch<PokemonPartial>(url);
   
   const reloadPokemon = () => {
     const newAleatorio = pokemoAletorio();
